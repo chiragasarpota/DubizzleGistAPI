@@ -13,3 +13,5 @@ The public list will load on home page load as well as when search bar is empty 
 #### Please use following username for fetching user that has no gists: 'chiragasarpota'
 
 #### Please use following username for testing invalid username '!'
+
+### You can access a build version of the application on - www.dubizzletest.tk

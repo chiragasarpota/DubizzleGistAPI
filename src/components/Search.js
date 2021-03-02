@@ -1,17 +1,25 @@
-import React from 'react'
-import styled from 'styled-components'
-import Octicon from 'react-octicon'
+import React from "react";
+import styled from "styled-components";
+import Octicon from "react-octicon";
 
-const Search = () => {
+const Search = (props) => {
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      props.getUserList(e.target.value); //Fetching Username to search and passing to parent components using properties
+    }
+  };
   return (
     <Wrapper>
       <InputBox>
-      <Octicon name="search" />
-      <Input placeholder="Search Gists for the username"/>
+        <Octicon name="search" />
+        <Input
+          placeholder="Search Gists for the username"
+          onKeyDown={handleKeyDown} //Calling function to handle enter key registry
+        />
       </InputBox>
     </Wrapper>
-  )
-}
+  );
+};
 
 const Wrapper = styled.div`
   padding: 8px;
@@ -33,9 +41,9 @@ const Input = styled.input`
   width: 100%;
   font-size: 16px;
 
-  &:focus{
+  &:focus {
     outline: 0;
   }
 `;
 
-export default Search
+export default Search;
